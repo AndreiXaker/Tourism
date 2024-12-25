@@ -1,12 +1,11 @@
-meta:
-  environment: nodejs
-  toolchain:
-    name: node
-    version: 18
+version: '3.9'
 
-build:
-  args: npm run build
-
-run:
-  command: nginx -g "daemon off;"
-  persistenceMount: /data
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./data:/data
