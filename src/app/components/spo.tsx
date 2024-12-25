@@ -14,7 +14,7 @@ export default function Spo() {
           {[
             { src: '/maldi.jpg', label: 'Мальдивы', discount: 45 },
             { src: '/belek.jpg', label: 'Белек', discount: 40 },
-            { src: '/thai.jpeg', label: 'Таиланд', discount: 25 },
+            { src: '/thai.jpeg', label: 'Тайланд', discount: 25 },
             { src: '/oae.jpeg', label: 'ОАЭ', discount: null },
           ].map((offer, index) => (
             <div key={index} className="relative overflow-hidden group cursor-pointer">
