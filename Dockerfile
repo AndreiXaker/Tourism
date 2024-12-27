@@ -28,6 +28,8 @@ COPY --from=build /app/public /usr/share/nginx/html/public
 # Копируем собранные файлы из папки out (создаваемой командой next build с output: 'export')
 COPY --from=build /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
+COPY --from=build /etc/letsencrypt/live/master-turov.ru/fullchain.pem /crt/cert.pem
+COPY --from=build /etc/letsencrypt/live/master-turov.ru/privkey.pem /crt/priv.pem
 
 # Экспонируем порт для сервера
 EXPOSE 80
