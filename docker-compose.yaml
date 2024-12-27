@@ -8,4 +8,5 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./data:/data
+      - "/etc/letsencrypt/live/master-turov.ru/fullchain.pem:/crt/cert.pem"
+      - "/etc/letsencrypt/live/master-turov.ru/privkey.pem:/crt/priv.pem"
