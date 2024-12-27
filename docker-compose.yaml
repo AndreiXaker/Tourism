@@ -11,4 +11,3 @@ services:
     volumes:
       - "/etc/letsencrypt/live/master-turov.ru/fullchain.pem:/crt/cert.pem"
       - "/etc/letsencrypt/live/master-turov.ru/privkey.pem:/crt/priv.pem"
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
