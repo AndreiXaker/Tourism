@@ -25,10 +25,12 @@ COPY --from=build /app/out /usr/share/nginx/html
 # Копируем содержимое папки public (если она есть) в нужную директорию в Nginx
 COPY --from=build /app/public /usr/share/nginx/html/public
 
+# Копируем конфигурационный файл nginx
+COPY --from=build /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
-
-# Экспонируем порт для сервера
+# Экспонируем порты для HTTP и HTTPS
 EXPOSE 80
+EXPOSE 443
 
 # Запускаем Nginx для обслуживания статических файлов
 CMD ["nginx", "-g", "daemon off;"]
