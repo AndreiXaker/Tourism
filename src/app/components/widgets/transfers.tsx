@@ -1,7 +1,12 @@
 'use client';
 import { useEffect } from 'react';
 
-export default function KiwiTaxiWidget({ visible, onClose }) {
+interface KiwiTaxiWidgetProps {
+  visible: boolean;
+  onClose: () => void;
+
+}
+export default function KiwiTaxiWidget({ visible, onClose } : KiwiTaxiWidgetProps) {
   useEffect(() => {
     if (visible) {
       let widgetContainer = document.querySelector('[data-kiwitaxi-white-label]');

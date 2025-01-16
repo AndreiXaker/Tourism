@@ -1,7 +1,10 @@
 'use client';
 import { useEffect } from 'react';
 
-export default function TourvisorWidget({ visible }) {
+interface TourvisorWidgetProps {
+  visible: boolean;
+}
+export default function TourvisorWidget({ visible }: TourvisorWidgetProps) {
   useEffect(() => {
     if (visible) {
         if (!document.querySelector('script[src="//tourvisor.ru/module/init.js"]')) {

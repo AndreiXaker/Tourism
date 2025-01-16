@@ -1,7 +1,13 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-export default function Insurance({ visible, onClose }) {
+interface InsuranceProps {
+  visible: boolean;
+  onClose: () => void;
+
+}
+
+export default function Insurance({ visible, onClose } : InsuranceProps)  {
   useEffect(() => {
     if (visible) {
       
