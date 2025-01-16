@@ -25,6 +25,8 @@ COPY --from=build /app/out /usr/share/nginx/html
 # Копируем содержимое папки public (если она есть) в нужную директорию в Nginx
 COPY --from=build /app/public /usr/share/nginx/html/public
 
+
+
 # Экспонируем порт для сервера
 EXPOSE 80
 

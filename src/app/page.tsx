@@ -5,13 +5,14 @@ import TravelSearch from "./components/travelSearch";
 import Spo from "./components/spo";
 import Footer from "./components/footer";
 
+
 export default function Home() {
   return (
     <div>
       <Header />
       <Welcome />
       <Menu />
-      <TravelSearch/>
+      {/* <TravelSearch/> */}
       <Spo/>
       <Footer/>
     </div>
