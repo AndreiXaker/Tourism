@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Montserrat} from 'next/font/google'
 
+const moserrate = Montserrat({
+  subsets: ['cyrillic'],
+  weight: '300',
+})
 
 
 export const metadata: Metadata = {
@@ -14,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru" className={moserrate.className}>
       <body
       >
         {children}

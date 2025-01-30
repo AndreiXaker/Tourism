@@ -3,3 +3,22 @@
 @tailwind utilities;
 
 
+.custom-scroll::-webkit-scrollbar {
+    width: 8px; /* Ширина скроллбара */
+  }
+  
+  /* Ползунок скролла */
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #d4af37, #8b6f1e); /* Золотистый градиент */
+    border-radius: 6px;
+  }
+  
+  /* Фон скроллбара */
+  .custom-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }

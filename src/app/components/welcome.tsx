@@ -1,26 +1,50 @@
-import Image from "next/image"
-
-
+'use client'
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Welcome() {
-    return (
-        <div className="relative">
-        {/* Изображение */}
-        <Image
-          src="/pic1.svg"
-          alt="pic"
-          width={4111}
-          height={1816}
-          className="w-full h-auto"
-        />
+  const [translateY, setTranslateY] = useState(100); // Начинаем со 100% вниз
 
-        {/* Текст поверх изображения */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-white text-4xl font-bold px-4 py-2 rounded-lg">
-          Комбинация туров это наша сильная сторона,  мы знаем об этом все!
-          </h1>
-        </div>
-        
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = Math.min(scrollTop / maxScroll, 1); // 0 (верх), 1 (низ)
+
+      setTranslateY(100 - progress * 100); // От 100% (внизу) до 0% (виден полностью)
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="fixed inset-0 -z-10">
+      {/* Первый фон (основной) */}
+      <Image
+        src="/bg.svg"
+        alt="Background"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        priority
+      />
+
+      {/* Второй фон (поднимается вверх при скролле) */}
+      <div
+        className="absolute inset-0 transition-transform duration-300 ease-out"
+        style={{ transform: `translateY(${translateY}%)` }}
+      >
+        <Image
+          src="/bg2.svg"
+          alt="Background Bottom"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          priority
+        />
       </div>
-    )
+
+    </div>
+  );
 }
