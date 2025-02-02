@@ -16,6 +16,7 @@
   "dependencies": {
     "@opennextjs/aws": "^3.3.0",
     "antd": "^5.22.5",
+    "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "lucide": "^0.469.0",
     "lucide-react": "^0.469.0",

@@ -3,6 +3,8 @@ import TravelSearch from "./components/travelForm/travelSearch";
 import Image from "next/image";
 import Countries from "./components/countries";
 import CallbackPhone from "./components/callback";
+import Footer from "./components/footer";
+import TourvisorWidget from "./components/widgets/tourvision";
 
 export default function Home() {
   return (
@@ -37,6 +39,8 @@ export default function Home() {
           </div>
       <Countries />
       <CallbackPhone />
+      <Footer />
+      <TourvisorWidget />
     </div>
   );
 }

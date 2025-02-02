@@ -5,9 +5,9 @@ interface TourvisorWidgetProps {
   visible: boolean;
 }
 
-export default function TourvisorWidget({ visible }: TourvisorWidgetProps) {
+export default function TourvisorWidget() {
   useEffect(() => {
-    if (visible) {
+   {
       const existingScript = document.querySelector('script[src="//tourvisor.ru/module/init.js"]');
       if (!existingScript) {
         const script = document.createElement('script');
@@ -22,12 +22,10 @@ export default function TourvisorWidget({ visible }: TourvisorWidgetProps) {
         console.log('Виджет уже загружен');
       }
     }
-  }, [visible]);
+  });
 
   return (
-    visible && (
-      <div className="tv-search-form tv-moduleid-9969017">
+      <div className="tv-search-form tv-moduleid-9969284">
       </div>
-    )
   );
 }

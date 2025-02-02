@@ -10,7 +10,7 @@ export default function Menu() {
   // const [transfersWidgetVisible, setTransfersWidgetVisible] = useState(false);
 
   const options = [
-    {src : '/gold_air.svg', text : 'Туры по всему миру'},
+    {src : '/gold_air.svg', text : 'Туры по всему миру', },
     {src : '/airplane.svg', text : 'Отели по всему миру'},
     {src : '/airplane.svg', text : 'Туры и санатории России'},
     {src : '/airplane.svg', text : 'Авиабилеты'},
