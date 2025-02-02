@@ -5,6 +5,7 @@ import Countries from "./components/countries";
 import CallbackPhone from "./components/callback";
 import Footer from "./components/footer";
 import TourvisorWidget from "./components/widgets/tourvision";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -40,7 +41,8 @@ export default function Home() {
       <Countries />
       <CallbackPhone />
       <Footer />
-      <TourvisorWidget />
+      
+
     </div>
   );
 }
