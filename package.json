@@ -14,7 +14,7 @@
     "deploy:worker": "npm run build:worker && wrangler deploy"
   },
   "dependencies": {
-    "@opennextjs/aws": "^3.3.0",
+    "aws-sdk": "^2.1234.0",  
     "antd": "^5.22.5",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",

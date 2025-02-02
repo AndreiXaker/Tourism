@@ -1,5 +1,5 @@
 # Шаг 1: Используем официальный образ Node.js для сборки приложения
-FROM node:20-alpine AS build
+FROM node:18-alpine AS build
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Устанавливаем зависимости
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # Копируем весь проект в контейнер
 COPY . .
