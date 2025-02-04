@@ -37,9 +37,8 @@ export default function Menu() {
       </div>
 
       
-      {showWidget && <TourvisorWidget visible={showWidget} onClose={() => setShowWidget(false)} />}
+      {showWidget && <TourvisorWidget visible={showWidget}/>}
       {showInsurance && (
-
           <Insurance visible={showInsurance} onClose={() => setShowInsurance(false)} />
       )}
       {showKiwiTaxi && <KiwiTaxiWidget visible={showKiwiTaxi} onClose={() => setShowKiwiTaxi(false)} />}
