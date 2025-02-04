@@ -1,4 +1,5 @@
 'use client';
+import { Button } from 'antd';
 import { useEffect } from 'react';
 
 interface KiwiTaxiWidgetProps {
@@ -57,7 +58,7 @@ export default function KiwiTaxiWidget({ visible, onClose } : KiwiTaxiWidgetProp
   return (
     visible && (
       <div  id="kiwitaxi-widget-container">
-      <button className='bg-red-500 absolute m-2 p-2 rounded-2xl text-xl' onClick={onClose}>Закрыть</button>
+      <Button className=' absolute m-2 p-2 rounded-2xl text-lg' onClick={onClose}>Закрыть</Button>
       </div>
     )
   );
