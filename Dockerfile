@@ -11,7 +11,6 @@ RUN npm config set registry https://registry.npmjs.org/
 
 RUN npm config set strict-ssl false
 
-RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
 # Устанавливаем зависимости
 RUN npm install --legacy-peer-deps
