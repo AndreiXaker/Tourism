@@ -9,7 +9,7 @@ export default function TourvisorWidget({ visible }: TourvisorWidgetProps) {
   const [widgetKey, setWidgetKey] = useState(0);
 
   useEffect(() => {
-    if (!visible) return; // Если виджет не должен отображаться, не загружаем скрипт
+    if (!visible) return;
 
     const existingScript = document.querySelector('script[src="//tourvisor.ru/module/init.js"]');
     if (existingScript) {
