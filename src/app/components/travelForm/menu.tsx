@@ -5,16 +5,18 @@ import TourvisorWidget from '../widgets/tourvision';
 import Insurance from '../widgets/insurance';
 import KiwiTaxiWidget from '../widgets/transfers';
 import InfoflotWidget from '../widgets/crouise';
+import SanatoriumSearch from '../widgets/sanatorium';
 export default function Menu() {
   const [showWidget, setShowWidget] = useState(true);
   const [showInsurance, setShowInsurance] = useState(false)
   const [showKiwiTaxi, setShowKiwiTaxi] = useState(false)
   const [showCruise, setShowCruise] = useState(false)
+  const [showSanatorium, setShowSanatorium] = useState(false)
 
   const options = [
     { src: '/gold_air.svg', text: 'Туры по всему миру' },
     { src: '/airplane.svg', text: 'Отели по всему миру' },
-    { src: '/airplane.svg', text: 'Туры и санатории России' },
+    { src: '/airplane.svg', text: 'Туры и санатории России', onClick : () => setShowSanatorium(true)  },
     { src: '/airplane.svg', text: 'Авиабилеты' },
     { src: '/airplane.svg', text: 'Трансферы',  onClick : () => setShowKiwiTaxi(true) },
     { src: '/airplane.svg', text: 'Страхование', onClick : () => setShowInsurance(true) },
@@ -39,12 +41,13 @@ export default function Menu() {
       </div>
 
       
-      {showWidget && <TourvisorWidget visible={showWidget}/>}
-      {showInsurance && (
-          <Insurance visible={showInsurance} onClose={() => setShowInsurance(false)} />
-      )}
-      {showKiwiTaxi && <KiwiTaxiWidget visible={showKiwiTaxi} onClose={() => setShowKiwiTaxi(false)} />}
-      {showCruise && <InfoflotWidget visible={showCruise} onClose={() => setShowCruise(false)} />}
+     
+        {showWidget && <TourvisorWidget visible={showWidget} />}
+        {showInsurance && <Insurance visible={showInsurance} onClose={() => setShowInsurance(false)} />}
+        {showKiwiTaxi && <KiwiTaxiWidget visible={showKiwiTaxi} onClose={() => setShowKiwiTaxi(false)} />}
+        {showCruise && <InfoflotWidget visible={showCruise} onClose={() => setShowCruise(false)} />}
+        {showSanatorium && <SanatoriumSearch visible={showSanatorium} onClose={() => setShowSanatorium(false)} />}
+      
     </div>
   );
 }

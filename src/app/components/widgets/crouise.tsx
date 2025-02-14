@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 
 interface InfoflotWidgetProps {
   visible: boolean;
+  onClose: () => void;
 }
 
-export default function InfoflotWidget({ visible }: InfoflotWidgetProps) {
+export default function InfoflotWidget({ visible, onClose }: InfoflotWidgetProps) {
   const [widgetKey, setWidgetKey] = useState(0);
 
   useEffect(() => {
