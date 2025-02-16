@@ -1,6 +1,12 @@
 'use client';
 import { useEffect, useState } from 'react';
 
+declare global {
+  interface Window {
+    createInfoflotWidget?: (url: string, options: Record<string, any>) => void;
+  }
+}
+
 interface InfoflotWidgetProps {
   visible: boolean;
   onClose: () => void;
