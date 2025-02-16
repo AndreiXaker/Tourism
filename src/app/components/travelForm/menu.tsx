@@ -47,7 +47,7 @@ export default function Menu() {
         {showKiwiTaxi && <KiwiTaxiWidget visible={showKiwiTaxi} onClose={() => setShowKiwiTaxi(false)} />}
         {showCruise && <InfoflotWidget visible={showCruise} onClose={() => setShowCruise(false)} />}
         {showSanatorium && <SanatoriumSearch visible={showSanatorium} onClose={() => setShowSanatorium(false)} />}
-      
+        <iframe src="https://www.magput.ru/1day.php" frameBorder="1" scrolling="auto" height="500" width="100%"> </iframe>
     </div>
   );
 }
